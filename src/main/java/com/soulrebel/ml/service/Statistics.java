@@ -1,9 +1,9 @@
-package com.soulrebel.ml.model;
+package com.soulrebel.ml.service;
 
 import com.google.gson.Gson;
 import com.soulrebel.ml.entity.Dna;
 import com.soulrebel.ml.enums.StatusCode;
-import com.soulrebel.ml.service.DnaService;
+import com.soulrebel.ml.model.DnaResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
