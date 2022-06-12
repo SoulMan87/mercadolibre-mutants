@@ -10,15 +10,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 
 @Slf4j
-@Component
+@Service
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class Statistics {
+public class StatisticsService {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(Statistics.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(StatisticsService.class);
 
     private final DnaService service;
 
