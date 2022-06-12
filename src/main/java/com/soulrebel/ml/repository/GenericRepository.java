@@ -6,5 +6,5 @@ public interface GenericRepository<T> {
 
     void save(T entity);
 
-    Optional<String> findAll();
+    String findAll();
 }
