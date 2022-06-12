@@ -1,10 +1,14 @@
 package com.soulrebel.ml.repository;
 
-import java.util.Optional;
+import com.soulrebel.ml.entity.Dna;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
-public interface DnaRepository<T> {
+public interface DnaRepository extends JpaRepository<Dna, Integer> {
 
-    void save(T entity);
+    @Query("SELECT COUNT (a) From Dna a WHERE a.isMutant=true")
+    Long counterMutants();
 
-    Optional<String> findAll();
+    @Query("SELECT COUNT (a) From Dna a WHERE a.isMutant=false")
+    Long counterNotMutants();
 }
