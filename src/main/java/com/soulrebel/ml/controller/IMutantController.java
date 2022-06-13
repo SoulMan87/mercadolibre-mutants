@@ -28,5 +28,5 @@ public interface IMutantController {
             " HttpStatus depending the human dna sequence checked.",
             nickname = "create-mutants", response = Response.class)
     @PostMapping(value = "/mutants",consumes = APPLICATION_JSON_VALUE)
-    ResponseEntity<String> mutant(@RequestBody DnaResponse dnaResponse);
+    ResponseEntity<String> mutant(@RequestBody @Validated DnaResponse dnaResponse);
 }

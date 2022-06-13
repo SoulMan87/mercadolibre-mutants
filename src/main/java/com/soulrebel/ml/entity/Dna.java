@@ -12,11 +12,11 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
-@Table(name = "dna", schema = "public")
+@Table(name = "Dna", schema = "public")
 public class Dna {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "DNA")

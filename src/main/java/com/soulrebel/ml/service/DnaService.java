@@ -37,7 +37,7 @@ public class DnaService implements GenericRepository<Dna> {
 
         StatisticsResponse statisticsResponse = new StatisticsResponse();
         statisticsResponse.setCountMutantDna(repository.counterMutants());
-        statisticsResponse.setCountHumanDna(repository.counterMutants());
+        statisticsResponse.setCountHumanDna(repository.counterNotMutants());
 
         return getResponse(statisticsResponse);
     }
