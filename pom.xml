@@ -11,8 +11,7 @@
     <groupId>com.soulrebel.ml</groupId>
     <artifactId>mercadolibre-mutants</artifactId>
     <version>1.0.0</version>
-    <name>mercadolibre-mutants</name>
-    <description>mercadolibre-mutants</description>
+    <description>Mutants Application</description>
 
     <developers>
         <developer>
@@ -81,6 +80,11 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.10.5</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -152,6 +156,9 @@
                         <exclude>**/com/soulrebel/ml/logic/**</exclude>
                         <exclude>**/com/soulrebel/ml/repository/**</exclude>
                         <exclude>**/com/soulrebel/ml/service/**</exclude>
+                        <exclude>**/com/soulrebel/ml/**</exclude>
+                        <exclude>**/com/soulrebel/ml/model/**</exclude>
+                        <exclude>**/com/soulrebel/ml/controller/**</exclude>
                     </excludes>
                 </configuration>
                 <executions>
@@ -181,7 +188,7 @@
                                         <limit>
                                             <counter>LINE</counter>
                                             <value>COVEREDRATIO</value>
-                                            <minimum>0.7</minimum>
+                                            <minimum>1.0</minimum>
                                         </limit>
                                     </limits>
                                 </rule>
