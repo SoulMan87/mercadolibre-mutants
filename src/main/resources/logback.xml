@@ -1,21 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-    <property name="LOGS" value="./logs" />
+    <property name="LOGS" value="logs" />
 
-    <springProperty scope="context" name="NAME" source="application.name"/>
-
-    <appender name="CONSOLE"
+    <appender name="Console"
               class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
             <Pattern>
-                %d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36}:%L - %msg%n
+                %black(%d{ISO8601}) %highlight(%-5level) [%blue(%t)] %yellow(%C{1.}): %msg%n%throwable
             </Pattern>
         </layout>
     </appender>
 
-    <appender name="ROLLINGFILE"
+    <appender name="RollingFile"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOGS}/ml-mutants.log</file>
+        <file>${LOGS}/spring-boot-logger.log</file>
         <encoder
                 class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <Pattern>%d %p %C{1.} [%t] %m%n</Pattern>
@@ -24,7 +23,7 @@
         <rollingPolicy
                 class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- rollover daily and when the file reaches 10 MegaBytes -->
-            <fileNamePattern>${LOGS}/archived/log-%d{yyyy-MM-dd}.%i.log
+            <fileNamePattern>${LOGS}/archived/spring-boot-logger-%d{yyyy-MM-dd}.%i.log
             </fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy
                     class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
@@ -33,8 +32,16 @@
         </rollingPolicy>
     </appender>
 
+    <!-- LOG everything at INFO level -->
     <root level="info">
-        <appender-ref ref="ROLLINGFILE" />
-        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="RollingFile" />
+        <appender-ref ref="Console" />
     </root>
+
+    <!-- LOG "com.soulrebel.ml*" at TRACE level -->
+    <logger name="com.soulrebel.ml" level="trace" additivity="false">
+        <appender-ref ref="RollingFile" />
+        <appender-ref ref="Console" />
+    </logger>
+
 </configuration>
