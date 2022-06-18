@@ -1,7 +1,7 @@
 FROM openjdk:11-jre-slim as builder
 WORKDIR application
-ADD maven/${project.build.finalName}.jar ./
-RUN java -Djarmode=layertools -jar ${project.build.finalName}.jar extract
+ADD target/mercadolibre-mutants-1.0.0.jar ./
+RUN java -Djarmode=layertools -jar mercadolibre-mutants-1.0.0.jar extract
 
 FROM openjdk:11-jre-slim
 
