@@ -17,19 +17,6 @@ application:
       database-platform: org.hibernate.dialect.PostgreSQLDialect
       open-in-view: false
       generate-ddl: true
-#Swagger API doc
-swagger:
-  allowed: true
-  api:
-    title: ml-mutants
-    version: '@project.version@'
-    description: mutants api.
-
-springfox:
-  documentation:
-    swagger:
-      v2:
-        path: /api-docs
 
 # Configuration Logging
   logging:
