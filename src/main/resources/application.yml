@@ -5,9 +5,9 @@ application:
   name: ml-mutants
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/Dna
-    username: postgres
-    password:
+    url: postgres://zwjnmdjzopqlnp:b26c13128f11a7198e4fc6164a66362b3cb06728a5c258456d29a133ab6d4566@ec2-52-72-99-110.compute-1.amazonaws.com:5432/d16o9idpc74t92
+    username: zwjnmdjzopqlnp
+    password: b26c13128f11a7198e4fc6164a66362b3cb06728a5c258456d29a133ab6d4566
     # JPA properties
     jpa:
       hibernate:
