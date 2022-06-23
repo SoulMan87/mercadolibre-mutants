@@ -6,6 +6,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
+/**
+ * Clase que inicia la aplicación.
+ *
+ * @author Jonathan Hinestroza
+ */
 @SpringBootApplication
 @Slf4j
 public class MutantsApplication {

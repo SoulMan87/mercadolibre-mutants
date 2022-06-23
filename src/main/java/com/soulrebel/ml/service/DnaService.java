@@ -14,6 +14,12 @@ import org.springframework.stereotype.Service;
 
 import java.text.DecimalFormat;
 
+
+/**
+ * Con este servicio se obtione la data de la base de datos
+ *
+ * @author Jonathan Hinestroza
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))

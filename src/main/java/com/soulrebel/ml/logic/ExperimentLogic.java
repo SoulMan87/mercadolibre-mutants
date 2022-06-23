@@ -7,6 +7,11 @@ import org.slf4j.LoggerFactory;
 
 import java.util.regex.Pattern;
 
+/**
+ * Logica de negocio de experimentos acerca de los dna si son mutantes o humanos
+ *
+ * @author Jonathan Hinestroza
+ */
 @Slf4j
 public class ExperimentLogic {
 

@@ -8,6 +8,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+
+
+/**
+ *Este servicio se encarga de verificar si el dna es humano o es mutante
+ *Tambien verifica si el formato del dn es correcto
+ *
+ */
 @Service
 @Slf4j
 public class GeneticistService {
