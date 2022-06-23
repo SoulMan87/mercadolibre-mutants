@@ -4,17 +4,17 @@ spring:
 application:
   name: ml-mutants
   datasource:
-    driver-class-name: org.postgresql.Driver
-    url: postgres://zwjnmdjzopqlnp:b26c13128f11a7198e4fc6164a66362b3cb06728a5c258456d29a133ab6d4566@ec2-52-72-99-110.compute-1.amazonaws.com:5432/d16o9idpc74t92
-    username: zwjnmdjzopqlnp
-    password: b26c13128f11a7198e4fc6164a66362b3cb06728a5c258456d29a133ab6d4566
+    driver-class-name: ${SPRING_DATASOURCE_DRIVER-CLASS-NAME}
+    url: ${DATABASE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
     # JPA properties
     jpa:
       hibernate:
-        ddl-auto: update
+        ddl-auto: ${SPRING_JPA_HIBERNATE_DDL-AUTO}
       show-sql: true
       database: postgresql
-      database-platform: org.hibernate.dialect.PostgreSQLDialect
+      database-platform: ${SPRING_JPA_DATABASE-PLATFORM}
       open-in-view: false
       generate-ddl: true
 
